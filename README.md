@@ -1,4 +1,4 @@
-# TypeScript Example
+# Instawork Skia Demo
 
 <p>
   <!-- iOS -->
@@ -13,8 +13,10 @@
 npx create-react-native-app -t with-typescript
 ```
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
-
+TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.<br/>
+<img src="/demo.gif" width="250" height="500"/>
+<br/>
+ 
 ## 🚀 How to use
 
 #### Creating a new project
