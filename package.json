@@ -5,6 +5,8 @@
     "@react-navigation/native-stack": "^6.9.8",
     "@shopify/react-native-skia": "0.1.157",
     "expo": "^47.0.0",
+    "expo-linear-gradient": "~12.0.1",
+    "expo-sensors": "~12.0.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",

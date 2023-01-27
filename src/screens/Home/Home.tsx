@@ -1,8 +1,8 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
+
 import ListItem from "../../components/ListItem/ListItem";
-import Logo from "../../components/Logo/Logo";
-import { Colors, Screens } from "../../lib/constants";
+import { Screens } from "../../lib/constants";
 
 export default function Home({ navigation }) {
   const renderListItem = ({ item }) => {
@@ -12,13 +12,6 @@ export default function Home({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Logo
-          width={150}
-          height={150}
-          logo={require("../../assets/logo.svg")}
-        />
-      </View>
       <Text style={styles.title}>
         Welcome to{`\n`}
         <Text style={styles.superText}>Instawork{"\n"}</Text>react-native-skia
@@ -39,13 +32,17 @@ const animations = [
     route: Screens.CHARTS,
     title: "Skia Circular Charts",
   },
+  {
+    id: "1",
+    route: Screens.CARDS,
+    title: "Animated Motion Payment cards",
+  },
 ];
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 155,
-    padding: 15,
+    padding: 20,
   },
   title: {
     textAlign: "center",
@@ -56,11 +53,11 @@ const styles = StyleSheet.create({
   superText: {
     fontSize: 45,
     fontWeight: "600",
-    color: Colors.primary,
+    color: "black",
   },
   logoContainer: {
-    width: 235,
-    height: 260,
+    width: 70,
+    height: 120,
     alignSelf: "center",
   },
 });

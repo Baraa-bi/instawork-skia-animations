@@ -6,9 +6,9 @@ import {
   ImageSVG,
   useSVG,
   BlendMode,
-  Group,
   runSpring,
   runTiming,
+  Group,
 } from "@shopify/react-native-skia";
 import React, { useMemo } from "react";
 import { StyleSheet } from "react-native";
@@ -18,21 +18,28 @@ export default function Logo({
   width,
   height,
   logo,
+  color,
 }: {
   width: number;
   height: number;
   logo;
+  color;
 }) {
   const svg = useSVG(logo);
   const animationState = useValue(0);
 
   const animateLogo = () => {
     animationState.current = 0;
-    runSpring(animationState, 65, {
-      mass: 3,
-      damping: 5,
-      velocity: 45,
-    });
+    runSpring(
+      animationState,
+      {
+        from: 20,
+        to: 4,
+      },
+      {
+        damping: 7,
+      }
+    );
   };
 
   useFocusEffect(() => {
@@ -44,15 +51,15 @@ export default function Logo({
 
   const paint = useMemo(() => Skia.Paint(), []);
   paint.setColorFilter(
-    Skia.ColorFilter.MakeBlend(Skia.Color(Colors.primary), BlendMode.SrcIn)
+    Skia.ColorFilter.MakeBlend(Skia.Color(color), BlendMode.SrcIn)
   );
   return (
     <Canvas style={styles.container}>
       <Group layer={paint}>
         {svg && (
           <ImageSVG
-            x={0}
-            y={animationState}
+            x={animationState}
+            y={0}
             svg={svg}
             width={width}
             height={height}
